@@ -2,13 +2,9 @@ FROM openjdk:11-jdk
 
 WORKDIR /app
 
-COPY .mvn/ ./config-service/.mvn
-COPY /config-service/src ./config-service/src
-COPY /config-service/pom.xml ./config-service
-COPY mvnw ./config-service
-COPY pom.xml ./
-
-WORKDIR /app/config-service
+COPY src .
+COPY pom.xml .
+COPY mvnw .
 
 RUN ./mvnw dependency:go-offline
 
