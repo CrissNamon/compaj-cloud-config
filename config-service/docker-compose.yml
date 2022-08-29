@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  config-service:
+    image: 'config-server:latest'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: config-service
+    networks:
+      - providers_config
+    ports:
+      - "8888:8888"
+
+networks:
+  providers_config:
+    external:
+      name: providers_config
