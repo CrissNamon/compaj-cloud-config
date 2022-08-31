@@ -2,9 +2,11 @@ FROM openjdk:11-jdk
 
 WORKDIR /app
 
-COPY src .
-COPY pom.xml .
-COPY mvnw .
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN ./mvnw dependency:go-offline
+
+COPY src ./src
 
 RUN ./mvnw dependency:go-offline
 
