@@ -12,7 +12,7 @@ spring:
     config:
       server:
         git:
-          uri: file:///app/ #https://github.com/CrissNamon/compaj-cloud.git
+          uri: https://github.com/HiddenPrj/compaj-cloud-config.git
           search-paths: config
 server:
   port: 8888
